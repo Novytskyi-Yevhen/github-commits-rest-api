@@ -63,7 +63,7 @@ Query params
 | repo - name of repo | string | Not required. Default - "node" |
 | per_page - count of commits return | number | Not required. Max value - 100. Default - 25 |
 | sha - SHA or branch to start listing commits from. Default: the repository’s default branch (usually master) | string | Not required. Default - "master" |
-| filter | string - messages or hashes | Not required. If you have not set this option, all data for each commit will be returned |
+| filter | string | Not required. Works with only one of the parameters - "messages" or "hashes". If you have not set this option, all data for each commit will be returned. |
 | page | number | Not required. Page number of the results to fetch. Default - 1 |
 
 ![](https://i.ibb.co/HTjvzcx/first.png)
