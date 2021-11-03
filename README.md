@@ -1,5 +1,5 @@
 <p align="center">
-  <p align="center">github-commits-rest-api</p>
+  <a href="https://quiet-badlands-07168.herokuapp.com/commits" align="center">github-commits-rest-api</a>
     <p align="center">
 </p>
 
