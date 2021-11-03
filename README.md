@@ -1,30 +1,11 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
-</p>
-
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+  <p align="center">github-commits-rest-api</p>
     <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Github-commits-rest-api is a back-end application, TypeScript and Nest.js-powered.
 
 ## Installation
 
@@ -45,29 +26,46 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+# Tech
 
-```bash
-# unit tests
-$ npm run test
+## Installation
 
-# e2e tests
-$ npm run test:e2e
+Github-commits-rest-api requires [Node.js](https://nodejs.org/) v14.7+ to run.
 
-# test coverage
-$ npm run test:cov
+Clone the repo
+```sh
+gh repo clone Novytskyi-Yevhen/github-commits-rest-api
+```
+Create .env file into the root folder with two parameters
+```sh
+PORT=3000
+GITHUB_TOKEN ='' // your github token 
 ```
 
-## Support
+## Dependencies
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Github-commits-rest-api is currently dependencies with the following plugins.
 
-## Stay in touch
+| Dependencies | Where is used |
+| ------ | ------ |
+| [Octokit](https://www.npmjs.com/package/@octokit/core)| Extendable client for GitHub's REST & GraphQL APIs | 
+| [dotenv](https://www.npmjs.com/package/dotenv)| For use environment variables | 
+| [Nest](https://www.npmjs.com/package/express) | To create and start the server  | 
+| [typescript](https://www.npmjs.com/package/typescript) | For development with using types| 
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+## How it works
+# /commits - get method will be return commits
 
-## License
+Query params
+| Params name | Params type | Required |
+| ------ | ------ | ------ |
+| owner - name of owner repository | string | Not required. Default - "nodejs" |
+| repo - name of repo | string | Not required. Default - "node" |
+| per_page - count of commits return | number | Not required. Max value - 100. Default - 25 |
+| sha - SHA or branch to start listing commits from. Default: the repository’s default branch (usually master) | string | Not required. Default - "master" |
+| filter | string - messages or hashes | Not required. If you have not set this option, all data for each commit will be returned |
+| page | number | Not required. Page number of the results to fetch. Default - 1 |
 
-Nest is [MIT licensed](LICENSE).
+![](https://i.ibb.co/HTjvzcx/first.png)
+![](https://i.ibb.co/QPXWPKZ/first.png)
+![](https://i.ibb.co/5rVrzL6/first.png)
