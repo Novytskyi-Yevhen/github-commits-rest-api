@@ -13,6 +13,7 @@ export class AppService {
           owner: query.owner || 'nodejs',
           repo: query.repo || 'node',
           per_page: query.per_page || 25,
+          page: query.page,
           sha: query.sha,
         })
       ).data;
